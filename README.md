@@ -7,7 +7,7 @@ This repository contains a collection of frontend developer machine coding chall
 
 - **File Explorer:** Create a file explorer interface with nested folders, expand/collapse functionality, and file content display. Style the UI with Tailwind's utility classes for a clean and responsive design.
 - **Nested Comments:** Develop a comment section that supports nested replies, with features like adding, editing, and deleting comments. Use Tailwind to structure and style the comment threads.
-- **Counter Application:** Implement a simple counter with increment, decrement, and reset buttons. Apply Tailwind for consistent and visually appealing button styling.
+- **Count down Application:** Create a customizable countdown timer with editable hours, minutes, and seconds. Includes start, pause, and reset features..
 - **Todo List:** Build a todo list with task management features such as adding, editing, deleting, and filtering tasks. Tailwind will help you achieve a sleek and intuitive user interface.
 - **Shopping Cart:** Construct a shopping cart system with product listings, cart management, and checkout functionalities. Leverage Tailwind to ensure a responsive layout and cohesive design.
 
