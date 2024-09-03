@@ -1,13 +1,18 @@
 import React from 'react';
 import Card from '../components/Card';
-import About from '../components/About';
 
 const Home = () => {
   return (
     <div className="w-full sm:p-2 lg:p-8">
-      <About />
-      <h1 className='m-6 text-center text-3xl font-bold'> Practice Challenges</h1>
+      <h1 className='m-6 text-center text-3xl font-bold'>Practice Challenges</h1>
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+      <div className="w-full">
+          <Card
+            title="Countdown Timer"
+            description="Create a customizable countdown timer with editable hours, minutes, and seconds. Includes start, pause, and reset features."
+            link="/count-down"
+          />
+        </div>
         <div className="w-full">
           <Card
             title="File Explorer"
@@ -22,13 +27,7 @@ const Home = () => {
             link="/nested-comments"
           />
         </div>
-        <div className="w-full">
-          <Card
-            title="Counter Application"
-            description="Implement a simple counter with increment, decrement, and reset buttons."
-            link="/counter-app"
-          />
-        </div>
+     
         <div className="w-full">
           <Card
             title="Todo List"

@@ -13,6 +13,4 @@ This repository contains a collection of frontend developer machine coding chall
 
 These challenges are ideal for practicing your skills in **React.js** and **Tailwind CSS**, which are essential for modern frontend development.
 
----
 
-This overview section highlights the use of Tailwind CSS in conjunction with React for common machine coding challenges.# interviewpro-react
