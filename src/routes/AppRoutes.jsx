@@ -8,7 +8,7 @@ import TodoList from '../pages/TodoList';
 import ShoppingCart from '../pages/ShoppingCart';
 import InfiniteScrollPage from '../pages/InfiniteScrollPage'
 import PaginationPage from '../pages/PaginationPage';
-import AutoCompleteSearchPage from '../pages/AutocompleteSearchPage';
+import AutocompleteSearchPage from '../pages/AutocompleteSearchPage';
 
 
 const AppRoutes = () => {
@@ -21,7 +21,7 @@ const AppRoutes = () => {
         <Route path="/todo-list" element={<TodoList />} /> 
         <Route path="/shopping-cart" element={<ShoppingCart />} /> 
         <Route path="/infinite-scroll" element={<InfiniteScrollPage />} /> 
-        <Route path="/autocomplete-search" element={<AutoCompleteSearchPage />} /> 
+        <Route path="/autocomplete-search" element={<AutocompleteSearchPage />} /> 
         <Route path="/pagination" element={<PaginationPage />} /> 
       </Routes>
   );

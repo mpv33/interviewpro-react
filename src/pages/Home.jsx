@@ -1,6 +1,8 @@
 import React from 'react';
 import Card from '../components/Card';
 
+const githubBaseUrl = "https://github.com/mpv33/interviewpro-react/blob/main/src/pages/";
+
 const challenges = [
   {
     title: "Todo List",
@@ -8,15 +10,15 @@ const challenges = [
     link: "/todo-list",
     level: 1,
     difficulty: "Easy",
-    githubUrl: "https://github.com/your-username/todo-list"
+    githubUrl: `${githubBaseUrl}TodoList.jsx` // Dynamic GitHub URL for TodoList
   },
   {
-    title: "Countdown Application",
+    title: "Countdown",
     description: "Build a customizable countdown timer with start, pause, and reset features.",
     link: "/count-down",
     level: 1,
     difficulty: "Easy",
-    githubUrl: "https://github.com/your-username/countdown-application"
+    githubUrl: `${githubBaseUrl}CountdownTimer.jsx` // Dynamic GitHub URL for CountdownTimer
   },
   {
     title: "Autocomplete Search",
@@ -24,7 +26,7 @@ const challenges = [
     link: "/autocomplete-search",
     level: 2,
     difficulty: "Medium",
-    githubUrl: "https://github.com/your-username/autocomplete-search"
+    githubUrl: `${githubBaseUrl}AutoCompleteSearchPage.jsx` // Dynamic GitHub URL for AutocompleteSearchPage
   },
   {
     title: "Nested Comments",
@@ -32,7 +34,7 @@ const challenges = [
     link: "/nested-comments",
     level: 2,
     difficulty: "Medium",
-    githubUrl: "https://github.com/your-username/nested-comments"
+    githubUrl: `${githubBaseUrl}NestedComments.jsx` // Dynamic GitHub URL for NestedComments
   },
   {
     title: "File Explorer",
@@ -40,7 +42,7 @@ const challenges = [
     link: "/file-explorer",
     level: 3,
     difficulty: "Hard",
-    githubUrl: "https://github.com/your-username/file-explorer"
+    githubUrl: `${githubBaseUrl}FileExplorer.jsx` // Dynamic GitHub URL for FileExplorer
   },
   {
     title: "Shopping Cart",
@@ -48,7 +50,7 @@ const challenges = [
     link: "/shopping-cart",
     level: 2,
     difficulty: "Medium",
-    githubUrl: "https://github.com/your-username/shopping-cart"
+    githubUrl: `${githubBaseUrl}ShoppingCart.jsx` // Dynamic GitHub URL for ShoppingCart
   },
   {
     title: "Pagination",
@@ -56,7 +58,7 @@ const challenges = [
     link: "/pagination",
     level: 1,
     difficulty: "Easy",
-    githubUrl: "https://github.com/your-username/pagination"
+    githubUrl: `${githubBaseUrl}PaginationPage.jsx` // Dynamic GitHub URL for PaginationPage
   },
   {
     title: "Infinite Scroll",
@@ -64,9 +66,10 @@ const challenges = [
     link: "/infinite-scroll",
     level: 2,
     difficulty: "Medium",
-    githubUrl: "https://github.com/your-username/infinite-scroll"
+    githubUrl: `${githubBaseUrl}InfiniteScrollPage.jsx` // Dynamic GitHub URL for InfiniteScrollPage
   }
 ];
+
 
 
 // Sort challenges by level
@@ -84,6 +87,7 @@ const Home = () => {
               description={challenge.description}
               link={challenge.link}
               difficulty={challenge.difficulty}
+              githubUrl={challenge.githubUrl} // Pass the GitHub URL here
             />
           </div>
         ))}
