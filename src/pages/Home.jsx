@@ -1,47 +1,83 @@
 import React from 'react';
 import Card from '../components/Card';
 
+const challenges = [
+  {
+    title: "Todo List",
+    description: "Implement a todo list with features for adding, editing, deleting, and filtering tasks.",
+    link: "/todo-list",
+    level: 1,
+    difficulty: "Easy"
+  },
+  {
+    title: "Countdown Application",
+    description: "Build a customizable countdown timer with start, pause, and reset features.",
+    link: "/count-down",
+    level: 1,
+    difficulty: "Easy"
+  },
+  {
+    title: "Autocomplete Search",
+    description: "Create an autocomplete search component that suggests results as the user types.",
+    link: "/autocomplete-search",
+    level: 2,
+    difficulty: "Medium"
+  },
+  {
+    title: "Nested Comments",
+    description: "Develop a comment section with nested replies, including adding, editing, and deleting comments.",
+    link: "/nested-comments",
+    level: 2,
+    difficulty: "Medium"
+  },
+  {
+    title: "File Explorer",
+    description: "Create a file explorer with nested folders and expand/collapse functionality using Tailwind CSS.",
+    link: "/file-explorer",
+    level: 3,
+    difficulty: "Hard"
+  },
+  {
+    title: "Shopping Cart",
+    description: "Construct a shopping cart system with product management, cart functionalities, and checkout.",
+    link: "/shopping-cart",
+    level: 2,
+    difficulty: "Medium"
+  },
+  {
+    title: "Pagination",
+    description: "Build a pagination component with page numbers and navigation buttons for large datasets.",
+    link: "/pagination",
+    level: 1,
+    difficulty: "Easy"
+  },
+  {
+    title: "Infinite Scroll",
+    description: "Implement infinite scrolling to load more items as the user scrolls down.",
+    link: "/infinite-scroll",
+    level: 2,
+    difficulty: "Medium"
+  }
+];
+
+// Sort challenges by level
+challenges.sort((a, b) => a.level - b.level);
+
 const Home = () => {
   return (
     <div className="w-full sm:p-2 lg:p-8">
-      <h1 className='m-6 text-center text-3xl font-bold'>Practice Challenges</h1>
+      <h1 className="m-6 text-center text-3xl font-bold">Practice Challenges</h1>
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-      <div className="w-full">
-          <Card
-            title="Countdown Timer"
-            description="Create a customizable countdown timer with editable hours, minutes, and seconds. Includes start, pause, and reset features."
-            link="/count-down"
-          />
-        </div>
-        <div className="w-full">
-          <Card
-            title="File Explorer"
-            description="Create a file explorer interface with nested folders, expand/collapse functionality, and file content display."
-            link="/file-explorer"
-          />
-        </div>
-        <div className="w-full">
-          <Card
-            title="Nested Comments"
-            description="Develop a comment section that supports nested replies, with features like adding, editing, and deleting comments."
-            link="/nested-comments"
-          />
-        </div>
-     
-        <div className="w-full">
-          <Card
-            title="Todo List"
-            description="Build a todo list with task management features such as adding, editing, deleting, and filtering tasks."
-            link="/todo-list"
-          />
-        </div>
-        <div className="w-full">
-          <Card
-            title="Shopping Cart"
-            description="Construct a shopping cart system with product listings, cart management, and checkout functionalities."
-            link="/shopping-cart"
-          />
-        </div>
+        {challenges.map((challenge, index) => (
+          <div key={index} className="w-full">
+            <Card
+              title={challenge.title}
+              description={challenge.description}
+              link={challenge.link}
+              difficulty={challenge.difficulty}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

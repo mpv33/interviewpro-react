@@ -6,6 +6,10 @@ import NestedComments from '../pages/NestedComments';
 import CountdownTimer from '../pages/CountdownTimer';
 import TodoList from '../pages/TodoList';
 import ShoppingCart from '../pages/ShoppingCart';
+import InfiniteScrollPage from '../pages/InfiniteScrollPage'
+import PaginationPage from '../pages/PaginationPage';
+import AutoCompleteSearchPage from '../pages/AutocompleteSearchPage';
+
 
 const AppRoutes = () => {
   return (
@@ -16,6 +20,9 @@ const AppRoutes = () => {
         <Route path="/count-down" element={<CountdownTimer />} /> 
         <Route path="/todo-list" element={<TodoList />} /> 
         <Route path="/shopping-cart" element={<ShoppingCart />} /> 
+        <Route path="/infinite-scroll" element={<InfiniteScrollPage />} /> 
+        <Route path="/autocomplete-search" element={<AutoCompleteSearchPage />} /> 
+        <Route path="/pagination" element={<PaginationPage />} /> 
       </Routes>
   );
 };

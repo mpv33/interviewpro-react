@@ -31,13 +31,22 @@ const Footer = () => {
                 <a href="/nested-comments" className="text-blue-400 hover:text-blue-300">Nested Comments</a>
               </li>
               <li>
-                <a href="/counter-app" className="text-blue-400 hover:text-blue-300">Counter App</a>
+                <a href="/count-down" className="text-blue-400 hover:text-blue-300">Countdown Application</a>
               </li>
               <li>
                 <a href="/todo-list" className="text-blue-400 hover:text-blue-300">Todo List</a>
               </li>
               <li>
                 <a href="/shopping-cart" className="text-blue-400 hover:text-blue-300">Shopping Cart</a>
+              </li>
+              <li>
+                <a href="/autocomplete-search" className="text-blue-400 hover:text-blue-300">Autocomplete Search</a>
+              </li>
+              <li>
+                <a href="/pagination" className="text-blue-400 hover:text-blue-300">Pagination</a>
+              </li>
+              <li>
+                <a href="/infinite-scroll" className="text-blue-400 hover:text-blue-300">Infinite Scroll</a>
               </li>
             </ul>
           </div>
