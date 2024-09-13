@@ -7,58 +7,67 @@ const challenges = [
     description: "Implement a todo list with features for adding, editing, deleting, and filtering tasks.",
     link: "/todo-list",
     level: 1,
-    difficulty: "Easy"
+    difficulty: "Easy",
+    githubUrl: "https://github.com/your-username/todo-list"
   },
   {
     title: "Countdown Application",
     description: "Build a customizable countdown timer with start, pause, and reset features.",
     link: "/count-down",
     level: 1,
-    difficulty: "Easy"
+    difficulty: "Easy",
+    githubUrl: "https://github.com/your-username/countdown-application"
   },
   {
     title: "Autocomplete Search",
     description: "Create an autocomplete search component that suggests results as the user types.",
     link: "/autocomplete-search",
     level: 2,
-    difficulty: "Medium"
+    difficulty: "Medium",
+    githubUrl: "https://github.com/your-username/autocomplete-search"
   },
   {
     title: "Nested Comments",
     description: "Develop a comment section with nested replies, including adding, editing, and deleting comments.",
     link: "/nested-comments",
     level: 2,
-    difficulty: "Medium"
+    difficulty: "Medium",
+    githubUrl: "https://github.com/your-username/nested-comments"
   },
   {
     title: "File Explorer",
     description: "Create a file explorer with nested folders and expand/collapse functionality using Tailwind CSS.",
     link: "/file-explorer",
     level: 3,
-    difficulty: "Hard"
+    difficulty: "Hard",
+    githubUrl: "https://github.com/your-username/file-explorer"
   },
   {
     title: "Shopping Cart",
     description: "Construct a shopping cart system with product management, cart functionalities, and checkout.",
     link: "/shopping-cart",
     level: 2,
-    difficulty: "Medium"
+    difficulty: "Medium",
+    githubUrl: "https://github.com/your-username/shopping-cart"
   },
   {
     title: "Pagination",
     description: "Build a pagination component with page numbers and navigation buttons for large datasets.",
     link: "/pagination",
     level: 1,
-    difficulty: "Easy"
+    difficulty: "Easy",
+    githubUrl: "https://github.com/your-username/pagination"
   },
   {
     title: "Infinite Scroll",
     description: "Implement infinite scrolling to load more items as the user scrolls down.",
     link: "/infinite-scroll",
     level: 2,
-    difficulty: "Medium"
+    difficulty: "Medium",
+    githubUrl: "https://github.com/your-username/infinite-scroll"
   }
 ];
+
 
 // Sort challenges by level
 challenges.sort((a, b) => a.level - b.level);
