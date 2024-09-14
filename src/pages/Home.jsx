@@ -24,40 +24,40 @@ const challenges = [
     title: "Autocomplete Search",
     description: "Create an autocomplete search component that suggests results as the user types.",
     link: "/autocomplete-search",
-    level: 2,
-    difficulty: "Medium",
-    githubUrl: `${githubBaseUrl}AutoCompleteSearchPage.jsx` // Dynamic GitHub URL for AutocompleteSearchPage
+    level: 1,
+    difficulty: "Easy",
+    githubUrl: `${githubBaseUrl}AutocompleteSearchPage.jsx` // Dynamic GitHub URL for AutocompleteSearchPage
   },
   {
     title: "Nested Comments",
     description: "Develop a comment section with nested replies, including adding, editing, and deleting comments.",
     link: "/nested-comments",
-    level: 2,
-    difficulty: "Medium",
+    level: 3,
+    difficulty: "Hard",
     githubUrl: `${githubBaseUrl}NestedComments.jsx` // Dynamic GitHub URL for NestedComments
   },
   {
     title: "File Explorer",
     description: "Create a file explorer with nested folders and expand/collapse functionality using Tailwind CSS.",
     link: "/file-explorer",
-    level: 3,
-    difficulty: "Hard",
+    level: 2,
+    difficulty: "Medium",
     githubUrl: `${githubBaseUrl}FileExplorer.jsx` // Dynamic GitHub URL for FileExplorer
   },
   {
     title: "Shopping Cart",
     description: "Construct a shopping cart system with product management, cart functionalities, and checkout.",
     link: "/shopping-cart",
-    level: 2,
-    difficulty: "Medium",
+    level: 3,
+    difficulty: "Hard",
     githubUrl: `${githubBaseUrl}ShoppingCart.jsx` // Dynamic GitHub URL for ShoppingCart
   },
   {
     title: "Pagination",
     description: "Build a pagination component with page numbers and navigation buttons for large datasets.",
     link: "/pagination",
-    level: 1,
-    difficulty: "Easy",
+    level: 2,
+    difficulty: "Medium",
     githubUrl: `${githubBaseUrl}PaginationPage.jsx` // Dynamic GitHub URL for PaginationPage
   },
   {

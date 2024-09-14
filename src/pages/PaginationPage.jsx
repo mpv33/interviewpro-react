@@ -22,11 +22,11 @@ const Pagination = ({
     const renderPageNumbers = () => {
         const pages = [];
         const halfVisible = Math.floor(maxVisiblePages / 2);
-
+        
         // Calculate start and end page to display only maxVisiblePages (5)
         let startPage = Math.max(1, currentPage - halfVisible);
         let endPage = Math.min(totalPages, currentPage + halfVisible);
-
+    
         // Ensure exactly 5 pages are displayed when possible
         if (endPage - startPage + 1 < maxVisiblePages) {
             if (startPage === 1) {
@@ -37,7 +37,7 @@ const Pagination = ({
                 startPage = Math.max(1, totalPages - maxVisiblePages + 1);
             }
         }
-
+    
         // Generate page numbers between startPage and endPage
         for (let i = startPage; i <= endPage; i++) {
             pages.push(
@@ -50,11 +50,11 @@ const Pagination = ({
                 </button>
             );
         }
-
+    
         return pages;
     };
-
-
+    
+    
 
     return (
         <div className="flex items-center justify-center mt-4">
@@ -87,8 +87,8 @@ const Pagination = ({
                 {nextLabel}
             </button>
             <div className="ml-4">
-                <span>Total Pages: {totalPages}</span>
-            </div>
+            <span>Total Pages: {totalPages}</span>
+        </div>
         </div>
     );
 };
