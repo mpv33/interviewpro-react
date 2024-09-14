@@ -22,32 +22,23 @@ const Pagination = ({
     const renderPageNumbers = () => {
         const pages = [];
         const halfVisible = Math.floor(maxVisiblePages / 2);
+
+        // Calculate start and end page to display only maxVisiblePages (5)
         let startPage = Math.max(1, currentPage - halfVisible);
         let endPage = Math.min(totalPages, currentPage + halfVisible);
 
-        if (currentPage <= halfVisible) {
-            endPage = Math.min(totalPages, maxVisiblePages);
-        }
-
-        if (currentPage + halfVisible >= totalPages) {
-            startPage = Math.max(1, totalPages - maxVisiblePages + 1);
-        }
-
-        if (startPage > 1) {
-            pages.push(
-                <button
-                    key="first"
-                    onClick={() => handlePageClick(1)}
-                    className="mx-1 px-3 py-1 rounded bg-gray-200 text-gray-800 hover:bg-gray-300"
-                >
-                    1
-                </button>
-            );
-            if (startPage > 2) {
-                pages.push(<span key="ellipsis-start" className="mx-1 px-3 py-1 text-gray-600">...</span>);
+        // Ensure exactly 5 pages are displayed when possible
+        if (endPage - startPage + 1 < maxVisiblePages) {
+            if (startPage === 1) {
+                // If near the beginning, push endPage further
+                endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+            } else if (endPage === totalPages) {
+                // If near the end, pull startPage back
+                startPage = Math.max(1, totalPages - maxVisiblePages + 1);
             }
         }
 
+        // Generate page numbers between startPage and endPage
         for (let i = startPage; i <= endPage; i++) {
             pages.push(
                 <button
@@ -60,23 +51,10 @@ const Pagination = ({
             );
         }
 
-        if (endPage < totalPages) {
-            if (endPage < totalPages - 1) {
-                pages.push(<span key="ellipsis-end" className="mx-1 px-3 py-1 text-gray-600">...</span>);
-            }
-            pages.push(
-                <button
-                    key="last"
-                    onClick={() => handlePageClick(totalPages)}
-                    className="mx-1 px-3 py-1 rounded bg-gray-200 text-gray-800 hover:bg-gray-300"
-                >
-                    {totalPages}
-                </button>
-            );
-        }
-
         return pages;
     };
+
+
 
     return (
         <div className="flex items-center justify-center mt-4">
@@ -108,6 +86,9 @@ const Pagination = ({
             >
                 {nextLabel}
             </button>
+            <div className="ml-4">
+                <span>Total Pages: {totalPages}</span>
+            </div>
         </div>
     );
 };
