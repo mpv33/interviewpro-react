@@ -80,7 +80,7 @@ const AutocompleteSearchPage = () => {
         setShowSuggestions(false);
       }
     };
-
+    fetchProducts()
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
