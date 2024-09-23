@@ -1,148 +1,93 @@
-import React, { useState } from 'react';
-import Comment from '../components/Comment';
+import React from 'react';
+import useComments from '../components/useComments';
+import Comment from '../components/Comment'
 
-function Comments() {
-    const [input, setInput] = useState('');
-    const [comments, setComments] = useState([
-        {
-            id: 1,
-            username: 'Mateshwari',
-            display:  "Hello! I hope you find this helpful!",
-            timestamp: Date.now(),
-            children: [
-              {
+const initialComments = [
+    {
+        id: 1,
+        username: 'Mateshwari',
+        display: 'This is the first comment! Love this post!',
+        timestamp: Date.now() - 10000, // 10 seconds ago
+        children: [
+            {
                 id: 2,
-                username: 'Shivani',
-                display: 'Great work mateshwari',
-                timestamp: Date.now(),
-                children: [],
-            }
-            ],
-        },
-        {
-            id: 3,
-            username: 'Shubham',
-            display: 'Great content!',
-            timestamp: Date.now(),
-            children: [],
-        },
-    ]);
-
-    const newComment = (text) => ({
-        id: new Date().getTime(),
-        username: 'Random User',
-        display: text,
-        timestamp: Date.now(),
+                username: 'Bob',
+                display: 'Replying to Mateshwari: I agree! It’s very insightful.',
+                timestamp: Date.now() - 5000, // 5 seconds ago
+                children: [
+                    {
+                        id: 3,
+                        username: 'Charlie',
+                        display: 'Reply to Bob: Yes, totally agree!',
+                        timestamp: Date.now() - 2000, // 2 seconds ago
+                        children: [],
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        id: 4,
+        username: 'David',
+        display: 'Great insights here. Thanks for sharing!',
+        timestamp: Date.now() - 20000, // 20 seconds ago
         children: [],
-    });
+    },
+    {
+        id: 5,
+        username: 'Eva',
+        display: 'Could you elaborate more on the topic?',
+        timestamp: Date.now() - 30000, // 30 seconds ago
+        children: [
+            {
+                id: 6,
+                username: 'Frank',
+                display: 'Reply to Eva: I’d love to see more details too!',
+                timestamp: Date.now() - 15000, // 15 seconds ago
+                children: [],
+            },
+            {
+                id: 7,
+                username: 'Grace',
+                display: 'Reply to Eva: Perhaps in a follow-up article?',
+                timestamp: Date.now() - 10000, // 10 seconds ago
+                children: [],
+            },
+        ],
+    },
+];
 
-    const addReply = (commentId, replyText) => {
-        const updatedComments = comments.map((comment) => {
-            if (comment.id === commentId) {
-                return {
-                    ...comment,
-                    children: [...comment.children, newComment(replyText)],
-                };
-            }
-            return {
-                ...comment,
-                children: addReplyToChild(comment.children, commentId, replyText),
-            };
-        });
-        setComments(updatedComments);
-    };
-
-    const addReplyToChild = (children, parentId, text) => {
-        return children.map((child) => {
-            if (child.id === parentId) {
-                return {
-                    ...child,
-                    children: [...child.children, newComment(text)],
-                };
-            }
-            return {
-                ...child,
-                children: addReplyToChild(child.children, parentId, text),
-            };
-        });
-    };
-
-    const handleInputChange = (e) => {
-        setInput(e.target.value);
-    };
-
-    const handleNewComment = () => {
-        if (input.trim()) {
-            setComments([...comments, newComment(input)]);
-            setInput('');
-        }
-    };
-
-    const editComment = (commentId, newText) => {
-        const updatedComments = comments.map((comment) => {
-            if (comment.id === commentId) {
-                return { ...comment, display: newText };
-            }
-            return {
-                ...comment,
-                children: editChildComment(comment.children, commentId, newText),
-            };
-        });
-        setComments(updatedComments);
-    };
-
-    const editChildComment = (children, commentId, newText) => {
-        return children.map((child) => {
-            if (child.id === commentId) {
-                return { ...child, display: newText };
-            }
-            return {
-                ...child,
-                children: editChildComment(child.children, commentId, newText),
-            };
-        });
-    };
-
-    const deleteComment = (commentId) => {
-        const updatedComments = comments
-            .filter((comment) => comment.id !== commentId)
-            .map((comment) => ({
-                ...comment,
-                children: deleteChildComment(comment.children, commentId),
-            }));
-        setComments(updatedComments);
-    };
-
-    const deleteChildComment = (children, commentId) => {
-        return children
-            .filter((child) => child.id !== commentId)
-            .map((child) => ({
-                ...child,
-                children: deleteChildComment(child.children, commentId),
-            }));
-    };
+function CommentApp() {
+    const {
+        comments,
+        input,
+        handleInputChange,
+        handleNewComment,
+        addReply,
+        editComment,
+        deleteComment,
+    } = useComments(initialComments);
 
     return (
-        <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
-            <h2 className="text-xl font-bold mb-4">Comments</h2>
+        <div className="max-w-2xl mx-auto p-4">
             <div className="mb-4">
                 <input
-                    className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-indigo-200"
-                    placeholder="Write a comment..."
-                    value={input}
                     type="text"
+                    value={input}
                     onChange={handleInputChange}
+                    className="w-full p-2 border border-gray-300 rounded-lg"
+                    placeholder="Write a comment..."
                 />
             </div>
             <div className="mb-4">
                 <button
-                    className="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition-all"
                     onClick={handleNewComment}
+                    className="bg-indigo-500 text-white px-4 py-2 rounded-lg"
                 >
-                    Comment
+                    Add Comment
                 </button>
             </div>
-            <ul className="space-y-4">
+            <div>
                 {comments.map((comment) => (
                     <Comment
                         key={comment.id}
@@ -152,9 +97,9 @@ function Comments() {
                         deleteComment={deleteComment}
                     />
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }
 
-export default Comments;
+export default CommentApp;

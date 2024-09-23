@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { FaReply, FaEdit, FaTrash, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
-function Comment({ comment, addReply, editComment, deleteComment, level = 0, maxLevel = 3 }) {
+function Comment({ comment, addReply, editComment, deleteComment, level = 0, maxLevel = 1 }) {
     const [replyText, setReplyText] = useState('');
     const [showReplyBox, setShowReplyBox] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
@@ -82,6 +82,7 @@ function Comment({ comment, addReply, editComment, deleteComment, level = 0, max
                         <div>
                             <p className="font-semibold">{comment.username}</p>
                             <p className="text-gray-700">{comment.display}</p>
+                            <p className="text-gray-400">{new Date(comment.timestamp).toLocaleTimeString()}</p>
                             <div className="flex space-x-2 mt-2">
                                 <button className="text-blue-500" onClick={handleReply}>
                                     <FaReply /> Reply

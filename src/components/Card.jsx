@@ -30,7 +30,8 @@ const Card = ({ title, description, link, difficulty, githubUrl }) => {
             to={link}
             className="inline-block bg-blue-500 text-white font-medium py-2 px-5 rounded-full shadow hover:bg-blue-600 hover:shadow-lg transition-colors duration-300 ease-in-out"
           >
-            Go to {title}
+           <span className='block md:hidden'>{title} </span>  
+           <span className='hidden md:block '> Go to {title} </span>  
           </Link>
 
           {/* GitHub Link */}
