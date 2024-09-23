@@ -53,7 +53,7 @@ const AutocompleteSearchPage = () => {
     }
   }, []);
 
-  const debouncedFetchProducts = useDebounce(fetchProducts, 500);
+  const debouncedFetchProducts = useDebounce(fetchProducts, 300);
 
   // Handle search query change
   const handleSearchChange = (e) => {

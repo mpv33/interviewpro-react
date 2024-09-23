@@ -11,7 +11,7 @@ const Header = () => {
           </Link>
         </h1>
         <h3 className="text-base md:text-lg text-center md:text-left">
-          Frontend Developer Machine Coding Challenge
+          Machine Coding Challenges
         </h3>
       </div>
     </header>
