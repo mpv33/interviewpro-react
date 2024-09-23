@@ -85,13 +85,13 @@ function Comment({ comment, addReply, editComment, deleteComment, level = 0, max
                             <p className="text-gray-400">{new Date(comment.timestamp).toLocaleTimeString()}</p>
                             <div className="flex space-x-2 mt-2">
                                 <button className="text-blue-500" onClick={handleReply}>
-                                    <FaReply /> Reply
+                                    <FaReply /> 
                                 </button>
                                 <button className="text-yellow-500" onClick={handleEdit}>
-                                    <FaEdit /> Edit
+                                    <FaEdit /> 
                                 </button>
                                 <button className="text-red-500" onClick={() => handleDelete(comment.id)}>
-                                    <FaTrash /> Delete
+                                    <FaTrash /> 
                                 </button>
                             </div>
                         </div>

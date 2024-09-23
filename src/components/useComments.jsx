@@ -30,7 +30,7 @@ const useComments = (initialComments) => {
     const addReply = (commentId, replyText) => {
         const updatedComments = recursiveUpdate(comments, commentId, (comment) => ({
             ...comment,
-            children: [...comment.children, newComment(replyText)],
+            children: [newComment(replyText),...comment.children],
         }));
         setComments(updatedComments);
     };
