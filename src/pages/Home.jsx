@@ -102,14 +102,6 @@ const Home = () => {
           ))}
         </div>
       </section>
-
-      {/* Footer Section */}
-      <footer className="bg-gray-900 py-8 text-center text-white">
-        <p>&copy; {new Date().getFullYear()} Frontend Challenges. All Rights Reserved.</p>
-        <a href="https://github.com/mpv33/interviewpro-react" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-600 transition duration-300">
-          View Source on GitHub
-        </a>
-      </footer>
     </div>
   );
 };
