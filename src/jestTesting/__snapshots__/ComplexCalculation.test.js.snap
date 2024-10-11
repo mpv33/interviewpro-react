@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ComplexCalculation Component renders snapshot correctly 1`] = `
+<DocumentFragment>
+  <div>
+    <input
+      aria-label="calculation-input"
+      type="number"
+      value="0"
+    />
+    <p
+      aria-label="calculation-result"
+    >
+      Result: 0
+    </p>
+      
+  </div>
+</DocumentFragment>
+`;
